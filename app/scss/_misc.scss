@@ -1,0 +1,50 @@
+.panel{
+    width : 100%;
+    background-color : white;
+    margin : 0 auto;
+    margin-bottom : 22px;
+    padding : 22px 12px;
+    @include border-radius(5px);
+    
+    .panel-row{
+        display : inline-block;
+        vertical-align : middle;
+        *{
+            display : inline-block;
+            vertical-align : middle;
+        }
+        
+        &.full-row{
+            width : 100%;
+            display : block;
+            color : gray;
+        }
+    }
+}
+.noselect{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+@media all and (max-width: $breakMax){
+    .panel{
+        width : 260px;
+        
+        .panel-row{
+            display : block;
+            
+            &:not(:last-child){
+                margin-bottom : 12px;
+            }
+        }
+    }
+}
+@media all and (min-width: $breakMin){
+    .panel{
+        width : 700px;
+    }
+}

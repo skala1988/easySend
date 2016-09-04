@@ -1,0 +1,57 @@
+.currency-choose-wrapper{
+    .currency-choose-from-wrapper{
+        input{
+            text-align : right;
+        }
+    }
+    .currency-choose-to-wrapper{
+        .currency-exchange-result{
+            text-align: right;
+            
+            font-weight : bold;
+            color : $colorTextInput;
+        }
+    }
+    .row-desc{
+        color : $colorTextDesc;
+        font-size : 11px;
+        text-align : left;
+    }
+    .exchange-rate{
+        margin-top : 12px;
+    }
+}
+
+@media all and (max-width: $breakMax){
+    .currency-choose-wrapper{
+        .currency-choose-from-wrapper{
+            input{
+                width : 135px;
+            }
+        }
+        .currency-choose-to-wrapper{
+            .currency-exchange-result{
+                width : 135px;
+            }
+        }
+        .exchange-arrows-icon{
+            &:before{
+                content: "\e119";
+            }
+        }
+        .row-desc{
+            width : 100%;
+            padding : 0 14px;
+        }
+    }
+}
+@media all and (min-width: $breakMin){
+    .currency-choose-wrapper{
+        .exchange-arrows-icon{
+            margin : 0 20px;
+            &:before{
+                content: "\e120";
+            }
+        }
+    }
+}

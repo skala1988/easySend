@@ -1,0 +1,60 @@
+.exchange-type-wrapper{
+    .exchange-type-inner-wrapper{
+        width : 100%;
+        
+        .exchange-type{
+            width : 40%;
+            margin : 20px 5% 0 5%;
+            border : lightgray solid 1px;
+            cursor : pointer;
+            padding : 12px 22px;
+            position : relative;
+            
+
+            .exchange-type-text{
+                margin : 0 auto;
+                padding-left : 22px;
+            }
+            .exchange-type-icon{
+                position : absolute;
+                left : 22px;
+                top : 12px;
+                width : 23px;
+                height : 23px;
+                background-image : url('./../img/radio.png');
+                background-position : -23px 0;
+            }
+            &.active{
+                border-color : $colorTextInput;
+                .exchange-type-icon{
+                    border : $colorTextInput;
+                    background-position : 0 0;
+                }
+            }
+            &.disabled{
+                cursor : not-allowed;
+                
+                .exchange-type-text{
+                    text-decoration: line-through;
+                    
+                    b{
+                        text-decoration: line-through;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: $breakMax){
+    .exchange-type-wrapper{
+        .exchange-type-inner-wrapper{
+            .exchange-type{
+                width : 100%;
+                margin : 20px 0 0 0;
+            }
+        }
+    }
+}
+@media all and (min-width: $breakMin){
+}

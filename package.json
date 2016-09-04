@@ -1,0 +1,21 @@
+{
+  "name": "Currency calculator",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Currency calculator programmed for Easy Send",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "browserify": "^13.1.0",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-karma": "^2.0.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-bro": "^0.11.1",
+    "karma-jasmine": "^0.3.8",
+    "karma-phantomjs-launcher": "^1.0.2"
+  }
+}

@@ -1,0 +1,79 @@
+<div ng-controller="calculatorCtrl" data-ng-init="init()">
+    <div class="country-choose-wrapper panel">
+        <div class='panel-row'>
+            Przelewam pieniądze 
+        </div>
+        <div class='panel-row'>
+            <div class='prepend-text'>z</div> 
+            <select 
+                ng-change="recalculate('countryFrom')" 
+                ng-init="selectedFromCountryId" 
+                ng-model="selectedFromCountryId" 
+                ng-options="option.id as option.name for option in countriesFrom">
+            </select>
+        </div>
+        <div class='panel-row'>
+            <div class='prepend-text'>do</div> 
+            <select 
+                ng-change="recalculate('countryTo')" 
+                ng-init="selectedToCountryId" 
+                ng-model="selectedToCountryId" 
+                ng-options="option.id as option.name for option in countriesTo">
+            </select>
+        </div>
+    </div>
+    <div class="currency-choose-wrapper panel">
+        <div class="currency-choose-from-wrapper panel-row">
+            <div class='row-desc'>Do wysłania:</div> 
+            <input type='text' 
+                ng-value-currency 
+                ng-model-onblur 
+                ng-change="recalculate('countryFrom')" 
+                ng-model="currencyAmmount"
+            />
+            <select 
+                ng-change="recalculate('currencyFrom')" 
+                ng-init="selectedCurrencyIn" 
+                ng-model="selectedCurrencyIn" 
+                ng-options="option.in.id as option.in.name for option in allCurrencies">
+            </select>
+        </div>
+        <div class='panel-row'>
+            <i class='exchange-arrows-icon glyphicon'></i>
+        </div>
+        <div class="currency-choose-to-wrapper panel-row">
+            <div class='row-desc'>Do otrzymania:</div> 
+            <div class='currency-exchange-result'>{{result}}</div>
+            <select 
+                ng-change="recalculate('currencyTo')" 
+                ng-init="selectedCurrencyOut" 
+                ng-model="selectedCurrencyOut" 
+                ng-options="option.id as option.name for option in allCurrencies[selectedCurrencyIn].outArr">
+            </select>
+        </div>
+        <div class='panel-row full-row exchange-rate'>
+            1 {{getCurrencyIn().name}} = {{rate.toString().replace('.',',')}} {{getCurrencyOut().name}}
+        </div>
+    </div>
+    <div class="exchange-type-wrapper panel">
+        <div class='panel-row full-row'>
+            Wybierz czas dostarczenia
+        </div>
+        <div class='exchange-type-inner-wrapper panel-row'>
+            <div  class='exchange-type exchange-type-standard noselect'
+                ng-class="{active: selectedExchangeType===0}"
+                ng-click="changeExchangeType(0)"
+            >
+                <div class='exchange-type-icon'></div>
+                <div class='exchange-type-text'>Przelew <b>FAST</b></div>
+            </div><!--
+         --><div class='exchange-type exchange-type-fast noselect'
+                ng-class="{active: selectedExchangeType===1, disabled : getExchangeType()===0}"
+                ng-click="changeExchangeType(1)"
+            >
+                <div class='exchange-type-icon'></div>
+                <div class='exchange-type-text'>Przelew <b>SUPERFAST</b></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+input,
+select{
+    border : none;
+    background-color : $colorBackgroundInput;
+    font-weight : $fontWeightInput;
+    cursor : pointer;
+    color : $colorTextInput;
+    border-bottom : 1px solid $colorTextInput;
+    border-top : 1px solid $colorTextInput;
+    border-top : 1px solid rgba(0,0,0,0.1);
+    margin : 0 4px;
+    padding : 3px 10px;
+    outline : none;
+    
+    &:focus{
+        outline : none;
+    }
+    @include border-radius(10px);
+}
+
+select{
+    text-align : center;
+    text-align-last: center;
+    
+    option{
+        text-align : left;
+    }
+}
